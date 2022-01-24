@@ -26,5 +26,5 @@ try:
         f'An avg of even numbers: {sum(even) / len(even):.2f}')  # calculating an average for the list of even numbers
     print(
         f'An avg of odd numbers: {sum(odd) / len(odd):.2f}')  # calculating an average for the list of odd numbers
-except ZeroDivisionError:
+except ZeroDivisionError:  # if divide on zero throws an error
     print("Calculation error")
