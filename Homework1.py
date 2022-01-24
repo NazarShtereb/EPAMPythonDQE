@@ -3,7 +3,7 @@ import random
 
 
 rlist = []  # create a blank list
-i = 0  # create variable for the loop iteration
+
 for i in range(100):  # create for loop with 100 iterations
     rlist.append(random.randrange(0, 1000, 1))  # add random numbers in range 0 - 1000
 n = len(rlist)  # create a variable with the list length value
