@@ -17,7 +17,7 @@ even = []  # create a blank list for even numbers
 odd = []  # create a blank list for odd numbers
 
 for i in rlist:  # loop through an every element in the list of all elements
-    if i % 2:
+    if (i % 2) == 0:
         even.append(i)  # check if the number is even. If it is even then add it to the even list
     else:
         odd.append(i)  # if not, so it is odd, then add it to the odd list
