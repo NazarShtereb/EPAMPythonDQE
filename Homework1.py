@@ -21,8 +21,10 @@ for i in rlist:  # loop through an every element in the list of all elements
         even.append(i)  # check if the number is even. If it is even then add it to the even list
     else:
         odd.append(i)  # if not, so it is odd, then add it to the odd list
-
-print(
-    f'An avg of even numbers: {sum(even) / len(even):.2f}')  # calculating an average for the list of even numbers
-print(
-    f'An avg of odd numbers: {sum(odd) / len(odd):.2f}')  # calculating an average for the list of odd numbers
+try:
+    print(
+        f'An avg of even numbers: {sum(even) / len(even):.2f}')  # calculating an average for the list of even numbers
+    print(
+        f'An avg of odd numbers: {sum(odd) / len(odd):.2f}')  # calculating an average for the list of odd numbers
+except ZeroDivisionError:
+    print("Calculation error")
