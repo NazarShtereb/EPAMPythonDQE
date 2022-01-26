@@ -6,6 +6,7 @@ rlist = []  # create a blank list
 
 for i in range(100):  # create for loop with 100 iterations
     rlist.append(random.randrange(0, 1000, 1))  # add random numbers in range 0 - 1000
+    
 n = len(rlist)  # create a variable with the list length value
 for j in range(n - 1, 0, -1):  # going through every number of the list, starting from the end, with step -1
     for i in range(j):
