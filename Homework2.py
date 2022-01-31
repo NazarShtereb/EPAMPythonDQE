@@ -1,17 +1,17 @@
 # import modules
-import random
-import string
+from random import randint, randrange
+from string import ascii_lowercase
 from collections import OrderedDict, Counter
 
-dictCnt = random.randrange(2, 11, 1)  # create a variable for a number of random dicts
+dictCnt = randrange(2, 11, 1)  # create a variable for a number of random dicts
 dictList = []  # create a blank list for dicts
 
 for i in range(dictCnt):
     # create dictCnt dicts with letter keys (need to change values in final version)
-    dictList.append(dict.fromkeys(string.ascii_lowercase[0:random.randint(2, 10)], 0))
+    dictList.append(dict.fromkeys(ascii_lowercase[0:randint(2, 26)], 0))
 for dictElement in dictList:
     for key, value in dictElement.items():  # iterate through every item of dicts in the list
-        randValue = random.randint(0, 100)
+        randValue = randint(0, 100)
         dictElement.update({key: randValue})  # populate dicts with random values
 print('Created a list of dicts:\n ', dictList)
 
