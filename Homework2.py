@@ -7,7 +7,7 @@ dictCnt = random.randrange(2, 11, 1)  # create a variable for a number of random
 dictList = []  # create a blank list for dicts
 
 for i in range(dictCnt):
-    # create dictCnt dicts with letter keys (need to change values in final version)
+    # create dictCnt dicts with letter keys
     dictList.append(dict.fromkeys(string.ascii_lowercase[0:random.randint(2, 10)], 0))
 for dictElement in dictList:
     for key, value in dictElement.items():  # iterate through every item of dicts in the list
