@@ -3,12 +3,12 @@ import random
 import string
 from collections import OrderedDict, Counter
 
-dictCnt = random.randrange(2, 10, 1)  # create a variable for a number of random dicts
+dictCnt = random.randrange(2, 11, 1)  # create a variable for a number of random dicts
 dictList = []  # create a blank list for dicts
 
 for i in range(dictCnt):
     # create dictCnt dicts with letter keys (need to change values in final version)
-    dictList.append(dict.fromkeys(string.ascii_lowercase[0:random.randint(1, 5)], 0))
+    dictList.append(dict.fromkeys(string.ascii_lowercase[0:random.randint(2, 10)], 0))
 for dictElement in dictList:
     for key, value in dictElement.items():  # iterate through every item of dicts in the list
         randValue = random.randint(0, 100)
@@ -43,7 +43,8 @@ try:
     for i, v in result.items():
         if i[0] not in (x[0] for x in finalDict.keys()):
             finalDict[i] = v
+    print('Final dict with max values:\n ', finalDict)
 except IndexError:
     print('Index error')
-print('Final dict with max values:\n ', finalDict)
+
 
