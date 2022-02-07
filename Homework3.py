@@ -1,13 +1,14 @@
 import re
 
-
-text = """tHis iz your homeWork, copy these Text to variable. 
+text = """homEwork:
+tHis iz your homeWork, copy these Text to variable. 
 
 	You NEED TO normalize it fROM letter CASEs point oF View. also, create one MORE senTENCE witH LAST WoRDS of each existING SENtence and add it to the END OF this Paragraph.
 
 	it iZ misspeLLing here. fix“iZ” with correct “is”, but ONLY when it Iz a mistAKE. 
 
 	last iz TO calculate nuMber OF Whitespace characteRS in this Text. caREFULL, not only Spaces, but ALL whitespaces. I got 87.
+
 """
 # normalizing case view
 text = re.split('([.!?\t\n] *)', text)
@@ -23,9 +24,9 @@ wsCnt = len(re.findall(r'[\s]', text))
 # take last word of each sentence
 lastW = ''
 for i in re.split('[.?!]', text)[0:-1]:
-    lastW += re.search("(\w+)$", i).group() + ' '
-text += lastW
+    lastW += re.search(r'(\w+)$', i).group() + ' '
+text = re.sub('END OF this Paragraph.', f'end of this paragraph.\n\tLast words: {lastW}', text, flags=re.I)
 
 # results print
 print(text)
-print('Whitespaces count', wsCnt)
+print('Whitespaces count:', wsCnt)
