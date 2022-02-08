@@ -20,33 +20,39 @@ def create_list(dictCnt=3, kCnt=5, vStart=0, vEnd=10):
         print('Created a list of dicts:\n ', dictList)
         return dictList
     except TypeError:
-        exception("Incorrect type of parameters")
+        exception('create_list. Incorrect type of parameters')
     except ValueError:
-        exception("Incorrect values")
+        exception('create_list. Incorrect values')
 
 
 # get all keys from dicts in the list
 def get_duplicates(dict_list):
-    duplicates = []
-    for d in dict_list:
-        for key, value in d.items():
-            duplicates.append(key)
-    # get all duplicate keys from dicts in list
-    duplicates = ([item for item, count in Counter(duplicates).items() if count > 1])
-    return duplicates
+    try:
+        duplicates = []
+        for d in dict_list:
+            for key, value in d.items():
+                duplicates.append(key)
+        # get all duplicate keys from dicts in list
+        duplicates = ([item for item, count in Counter(duplicates).items() if count > 1])
+        return duplicates
+    except TypeError:
+        exception('get_duplicates. Incorrect input')
 
 
 # rename and concat all dicts
 def dict_concat(dict_list):
-    result = {}
-    for i in dict_list:
-        for k, v in i.items():
-            if k in get_duplicates(dict_list):
-                result[k + '_' + str(dict_list.index(i) + 1)] = v
-            else:
-                result[k] = v
-    print('Concatenated dicts with renamed keys:\n ', result)
-    return result
+    try:
+        result = {}
+        for i in dict_list:
+            for k, v in i.items():
+                if k in get_duplicates(dict_list):
+                    result[k + '_' + str(dict_list.index(i) + 1)] = v
+                else:
+                    result[k] = v
+        print('Concatenated dicts with renamed keys:\n ', result)
+        return result
+    except TypeError:
+        exception('dict_concat. Incorrect input')
 
 
 # get concatenated dict with sorted values
@@ -60,9 +66,9 @@ def get_sorted(dict_list):
             if i[0] not in (x[0] for x in finalDict.keys()):
                 finalDict[i] = v
         return finalDict
-    except ValueError:
+    except TypeError:
         exception("Incorrect list input")
 
 
-list_dicts = create_list(dictCnt=3, kCnt=randint(2, 5), vStart=5, vEnd=10)
+list_dicts = create_list(dictCnt=4, kCnt=randint(2, 5), vStart=5, vEnd=10)
 print('Final dict with max values:\n ', get_sorted(dict_list=list_dicts))
