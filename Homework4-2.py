@@ -1,5 +1,7 @@
+import functools
 import re
 from logging import exception
+
 
 text_example = """homEwork:
 tHis iz your homeWork, copy these Text to variable. 
@@ -11,6 +13,17 @@ tHis iz your homeWork, copy these Text to variable. 
 	last iz TO calculate nuMber OF Whitespace characteRS in this Text. caREFULL, not only Spaces, but ALL whitespaces. I got 87.
 
 """
+
+
+def print_decorator(func):
+    @functools.wraps(func)
+    def wrapper(*func_args, **func_kwargs):
+        print('function call --> ' + func.__name__ + '()')
+        retval = func(*func_args, **func_kwargs)
+        print('function ' + func.__name__ + '() returns:\n' + str(retval))
+        return retval
+
+    return wrapper
 
 
 # normalizing case view
@@ -36,6 +49,7 @@ def solve_mistake(text_incorrect, correct='', incorrect=''):
 
 
 # take last word of each sentence
+@print_decorator
 def take_last_words(add_after, text_take):
     try:
         lastW = ''
@@ -48,6 +62,7 @@ def take_last_words(add_after, text_take):
 
 
 # char counter
+@print_decorator
 def counter(to_count, where_count):
     try:
         return len(re.findall(f'[{to_count}]', where_count))
@@ -58,7 +73,5 @@ def counter(to_count, where_count):
 # results print
 normalized_text = normalize(text_to_normalize=text_example)
 correct_text = solve_mistake(text_incorrect=normalized_text, incorrect='iz', correct='is')
-
-char_count = counter(r'\s', correct_text)
-print(take_last_words('end of this paragraph.', correct_text))
-print('Whitespaces count:', char_count)
+counter(r'\s', correct_text)
+take_last_words('end of this paragraph.', correct_text)
