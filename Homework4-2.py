@@ -2,6 +2,7 @@ import functools
 import re
 from logging import exception
 
+
 text_example = """homEwork:
 tHis iz your homeWork, copy these Text to variable. 
 
