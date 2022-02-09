@@ -2,7 +2,6 @@ import functools
 import re
 from logging import exception
 
-
 text_example = """homEwork:
 tHis iz your homeWork, copy these Text to variable. 
 
@@ -15,6 +14,7 @@ tHis iz your homeWork, copy these Text to variable. 
 """
 
 
+# decorator that print func return value
 def print_decorator(func):
     @functools.wraps(func)
     def wrapper(*func_args, **func_kwargs):
@@ -70,7 +70,7 @@ def counter(to_count, where_count):
         exception('counter. Incorrect parameters type')
 
 
-# results print
+# function calls and results print
 normalized_text = normalize(text_to_normalize=text_example)
 correct_text = solve_mistake(text_incorrect=normalized_text, incorrect='iz', correct='is')
 counter(r'\s', correct_text)
