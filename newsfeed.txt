@@ -1,0 +1,18 @@
+New ---------------------
+TESTNEW
+TESTNEW
+LVIV
+Date: Feb 20 2022 01:47AM
+-------------------------
+Private Ad --------------
+TESTAD
+TESTAD
+Actual until: Nov 20 2022, 273 Days left
+-------------------------
+Stream ------------------
+TESTSTREAM
+TESTSTREAM
+TESTSTREAM
+Stream start: Dec 20 2022 01:45AM, 303 Days to the stream
+Stream end: Dec 20 2022 02:30AM
+-------------------------
