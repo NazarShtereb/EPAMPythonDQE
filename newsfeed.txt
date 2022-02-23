@@ -1,18 +1,31 @@
 New ---------------------
-TESTNEW
-TESTNEW
-LVIV
-Date: Feb 20 2022 01:47AM
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Date: Feb 23 2022 10:54PM
 -------------------------
 Private Ad --------------
-TESTAD
-TESTAD
-Actual until: Nov 20 2022, 273 Days left
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Actual until: Jun 19 2022, 116 Days left
 -------------------------
 Stream ------------------
-TESTSTREAM
-TESTSTREAM
-TESTSTREAM
-Stream start: Dec 20 2022 01:45AM, 303 Days to the stream
-Stream end: Dec 20 2022 02:30AM
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Stream start: Jun 19 2022 01:33PM, 116 Days to the stream
+Stream end: Jun 19 2022 02:03PM
+-------------------------
+Stream ------------------
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Stream start: Feb 23 2022 10:54PM, 0 Days to the stream
+Stream end: Feb 23 2022 11:24PM
+-------------------------
+New ---------------------
+Added from input
+Added from input
+Added from input
+Date: Feb 23 2022 10:54PM
 -------------------------

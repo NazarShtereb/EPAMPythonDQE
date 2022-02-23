@@ -12,6 +12,7 @@ class Publication:
 
 
     """
+
     def __init__(self, name, text):
         self.name = name
         self.text = text
@@ -63,6 +64,7 @@ class New(Publication):
     City: A city of the new
 
     """
+
     def __init__(self, name, text, city):
         self.city = city
         super().__init__(name, text)
@@ -91,6 +93,7 @@ class Ad(Publication):
 
 
     """
+
     def __init__(self, name, text, exp_date):
         self.exp_date = datetime.datetime.strptime(exp_date, "%b %d %Y")
         super().__init__(name, text)
@@ -106,7 +109,8 @@ class Ad(Publication):
         """
         today = self.today()
         date_diff = today - self.exp_date
-        return 'Actual until: ' + str(self.exp_date.strftime('%b %d %Y')) + ', ' + str(abs(date_diff.days)) + ' Days left'
+        return 'Actual until: ' + str(self.exp_date.strftime('%b %d %Y')) + ', ' + str(
+            abs(date_diff.days)) + ' Days left'
 
     def publish(self):
         """
@@ -133,6 +137,7 @@ class Stream(Publication):
 
 
     """
+
     def __init__(self, name, text, link, start_date, duration):
         self.start_date = datetime.datetime.strptime(start_date, '%b %d %Y %I:%M%p')
         self.link = link
@@ -148,12 +153,21 @@ class Stream(Publication):
         :returns
         start_date and end_date
         """
-        today = self.today()
-        date_diff = today - self.start_date
-        end_time = self.start_date + datetime.timedelta(minutes=int(self.duration))
-        return 'Stream start: ' + str(self.start_date.strftime('%b %d %Y %I:%M%p')) +\
-               ', ' + str(abs(date_diff.days)) + ' Days to the stream' \
-               + f'\nStream end: {end_time.strftime("%b %d %Y %I:%M%p")}'
+        try:
+            today = self.today()
+            if self.start_date <= today:
+                self.start_date = today
+            date_diff = today - self.start_date
+            end_time = self.start_date + datetime.timedelta(minutes=int(self.duration))
+            return 'Stream start: ' + str(self.start_date.strftime('%b %d %Y %I:%M%p')) + \
+                   ', ' + str(abs(date_diff.days)) + ' Days to the stream' \
+                   + f'\nStream end: {end_time.strftime("%b %d %Y %I:%M%p")}'
+        except ValueError:
+            print('Incorrect dates')
+            exit()
+        except TypeError:
+            print('Incorrect dates')
+            exit()
 
     def publish(self):
         """
@@ -167,10 +181,16 @@ class Stream(Publication):
         return 'Stream ' + '-' * 18 + '\n' + self.name + '\n' + self.text + '\n' + self.link + '\n' + str(self.date)
 
 
+def add_to_file(pub):
+    with open("newsfeed.txt", 'a', encoding='utf-8') as f:
+        f.write(pub.publish() + f'\n{"-" * 25}\n')
+
+
 class Menu:
     """
     Class to create and print a menu with options
     """
+
     def __init__(self):
         self.menu_options = {
             1: 'Add new',
@@ -179,20 +199,6 @@ class Menu:
             4: 'Exit',
         }
         self.menu_exec()
-
-    @staticmethod
-    def add_to_file(pub):
-        """
-        Open newsfeed.txt file in utf-8
-        Add the new/ad/stream to the end of a file
-
-        :parameter
-        Self
-        :returns
-        None
-        """
-        with open("newsfeed.txt", 'a', encoding='utf-8') as f:
-            f.write(pub.publish() + f'\n{"-" * 25}\n')
 
     def print_menu(self):
         """
@@ -207,12 +213,12 @@ class Menu:
         for key in self.menu_options.keys():
             print(key, '--', self.menu_options[key])
 
-    def option1(self):
+    @staticmethod
+    def option1():
         """
         Add a new option. Create 'a new' by console inputs
 
-        :parameter
-        Self
+
         :returns
         None
         """
@@ -220,14 +226,14 @@ class Menu:
         name = input('Name of a new: ')
         text = input('Text of a new: ')
         city = input('City of a new: ')
-        self.add_to_file(New(name, text, city))
+        add_to_file(New(name, text, city))
 
-    def option2(self):
+    @staticmethod
+    def option2():
         """
         Add an ad option. Create 'a private ad' by console inputs
 
-        :parameter
-        Self
+
         :returns
         None
         """
@@ -235,14 +241,14 @@ class Menu:
         name = input('Name of an ad: ')
         text = input('Text of an ad: ')
         date = input('Expire date (ex. Jun 19 2022): ')
-        self.add_to_file(Ad(name, text, date))
+        add_to_file(Ad(name, text, date))
 
-    def option3(self):
+    @staticmethod
+    def option3():
         """
         Add a stream option. Create 'a stream' by console inputs
 
-        :parameter
-        Self
+
         :returns
         None
         """
@@ -252,7 +258,7 @@ class Menu:
         link = input('Link of a stream: ')
         date = input('Stream date (ex. Jun 19 2022 1:33PM): ')
         duration = input('Stream duration in minutes (ex. 30): ')
-        self.add_to_file(Stream(name, text, link, date, duration))
+        add_to_file(Stream(name, text, link, date, duration))
 
     def menu_exec(self):
         """
