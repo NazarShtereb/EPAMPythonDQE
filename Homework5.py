@@ -1,4 +1,5 @@
 import datetime
+import Homework7 as Hm7
 
 
 class Publication:
@@ -184,6 +185,9 @@ class Stream(Publication):
 def add_to_file(pub):
     with open("newsfeed.txt", 'a', encoding='utf-8') as f:
         f.write(pub.publish() + f'\n{"-" * 25}\n')
+        readfile = Hm7.read_file("newsfeed.txt")
+        Hm7.generate_words_count(readfile)
+        Hm7.generate_letter_summary(readfile)
 
 
 class Menu:
