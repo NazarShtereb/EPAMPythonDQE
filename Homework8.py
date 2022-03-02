@@ -26,7 +26,6 @@ def parse_json(file_path):
                     continue
                 else:
                     inc_rows.append(i)
-                    print(inc_rows)
                     continue
             except IndexError:
                 inc_rows.append(i)
