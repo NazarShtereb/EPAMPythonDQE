@@ -1,25 +1,25 @@
 New ---------------------
-Hi. I'm normalized text, nice to meet you
-Hi. I'm normalized text, nice to meet you
-Hi. I'm normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
 Date: Feb 23 2022 10:54PM
 -------------------------
 Private Ad --------------
-Hi. I'm normalized text, nice to meet you
-Hi. I'm normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
 Actual until: Jun 19 2022, 116 Days left
 -------------------------
 Stream ------------------
-Hi. I'm normalized text, nice to meet you
-Hi. I'm normalized text, nice to meet you
-Hi. I'm normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
 Stream start: Jun 19 2022 01:33PM, 116 Days to the stream
 Stream end: Jun 19 2022 02:03PM
 -------------------------
 Stream ------------------
-Hi. I'm normalized text, nice to meet you
-Hi. I'm normalized text, nice to meet you
-Hi. I'm normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
+Hi. I`m normalized text, nice to meet you
 Stream start: Feb 23 2022 10:54PM, 0 Days to the stream
 Stream end: Feb 23 2022 11:24PM
 -------------------------
@@ -28,4 +28,133 @@ Added from input
 Added from input
 Added from input
 Date: Feb 23 2022 10:54PM
+-------------------------
+New ---------------------
+HI
+HI
+HI
+Date: Feb 27 2022 11:13PM
+-------------------------
+New ---------------------
+TESTING
+TEST
+TEST
+Date: Feb 27 2022 11:13PM
+-------------------------
+New ---------------------
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Date: Mar 02 2022 11:32PM
+-------------------------
+Private Ad --------------
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Actual until: Jun 19 2022, 109 Days left
+-------------------------
+Stream ------------------
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Stream start: Jun 19 2022 01:33PM, 109 Days to the stream
+Stream end: Jun 19 2022 02:03PM
+-------------------------
+Stream ------------------
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Hi. I'm normalized text, nice to meet you
+Stream start: Mar 02 2022 11:32PM, 0 Days to the stream
+Stream end: Mar 03 2022 12:02AM
+-------------------------
+New ---------------------
+New name
+Text
+Kyiv
+Date: Mar 02 2022 11:40PM
+-------------------------
+Private Ad --------------
+Ad Name
+Text
+Actual until: Jun 19 2022, 109 Days left
+-------------------------
+Stream ------------------
+Stream Name
+Text
+Lviv
+Stream start: Jun 19 2022 01:33PM, 109 Days to the stream
+Stream end: Jun 19 2022 02:08PM
+-------------------------
+New ---------------------
+New name
+Text
+Kyiv
+Date: Mar 02 2022 11:44PM
+-------------------------
+Private Ad --------------
+Ad Name
+Text
+Actual until: Jun 19 2022, 109 Days left
+-------------------------
+Stream ------------------
+Stream Name
+Text
+Lviv
+Stream start: Jun 19 2022 01:33PM, 109 Days to the stream
+Stream end: Jun 19 2022 02:08PM
+-------------------------
+New ---------------------
+New name
+Text
+Kyiv
+Date: Mar 02 2022 11:48PM
+-------------------------
+Private Ad --------------
+Ad Name
+Text
+Actual until: Jun 19 2022, 109 Days left
+-------------------------
+Stream ------------------
+Stream Name
+Text
+Lviv
+Stream start: Jun 19 2022 01:33PM, 109 Days to the stream
+Stream end: Jun 19 2022 02:08PM
+-------------------------
+New ---------------------
+New name
+Text
+Kyiv
+Date: Mar 02 2022 11:49PM
+-------------------------
+Stream ------------------
+Stre3231am Name
+Text
+Lviv
+Stream start: Jun 19 2022 01:33PM, 109 Days to the stream
+Stream end: Jun 19 2022 02:08PM
+-------------------------
+New ---------------------
+New name
+Text
+Kyiv
+Date: Mar 02 2022 11:50PM
+-------------------------
+New ---------------------
+New name
+Text
+Kyiv
+Date: Mar 02 2022 11:53PM
+-------------------------
+New ---------------------
+New name
+Text
+Kyiv
+Date: Mar 02 2022 11:55PM
+-------------------------
+Stream ------------------
+Stre3231am Name
+Text
+Lviv
+Stream start: Jun 19 2022 01:33PM, 109 Days to the stream
+Stream end: Jun 19 2022 02:08PM
 -------------------------

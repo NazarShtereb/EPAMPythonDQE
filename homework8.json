@@ -1,0 +1,20 @@
+[{
+    "Type": "New",
+    "Name": "New name",
+    "Text": "Text",
+    "City": "Kyiv"
+},
+{
+    "Type": "Ad",
+    "Name": "Ad32131 Name",
+    "Text": "Text",
+    "Date": "Jun 19 2022332131"
+},
+{
+    "Type": "Stream",
+    "Name": "Stre3231am Name",
+    "Text": "Text",
+    "Link": "Lviv",
+    "Date": "Jun 19 2022 1:33PM",
+    "Duration": "35"
+}]

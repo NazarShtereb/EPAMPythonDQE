@@ -1,6 +1,7 @@
 import csv
 import Homework5 as Hw5
 import Homework4_2_review as Hw4_2
+import Homework8 as Hw8
 import os
 
 
@@ -60,7 +61,8 @@ class MainMenu:
         self.menu_options = {
             1: 'Add from the console input',
             2: 'Add from the file',
-            3: 'Exit',
+            3: 'Add from the json',
+            4: 'Exit',
         }
         self.menu_exec()
 
@@ -102,6 +104,23 @@ class MainMenu:
         except ValueError:
             pass
 
+    @staticmethod
+    def option3():
+        """
+        Calls file parsed method - parse_json
+        Requires user's file path input or use default path
+        :return:
+        """
+        try:
+            file_path = input('Write file path. Leave it blank if you want to use a default: ')
+            if file_path == '':
+                file_path = 'homework8.json'
+            for i in Hw8.parse_json(file_path):
+                Hw5.add_to_file(i)
+
+        except ValueError:
+            pass
+
     def menu_exec(self):
         """
         Execute menu. Print all options and waiting for user's choice
@@ -125,6 +144,8 @@ class MainMenu:
                 elif option == 2:
                     self.option2()
                 elif option == 3:
+                    self.option3()
+                elif option == 4:
                     exit()
                 else:
                     print('Invalid option. Please enter a number between 1 and 4.')
