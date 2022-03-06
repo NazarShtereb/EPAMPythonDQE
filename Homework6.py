@@ -2,6 +2,7 @@ import csv
 import Homework5 as Hw5
 import Homework4_2_review as Hw4_2
 import Homework8 as Hw8
+import Homework9 as Hw9
 import os
 
 
@@ -40,10 +41,18 @@ def parse_text(file_path):
                     inc_rows.append(row)
                     continue
             print(f'Content parsed! Number of skipped rows: {len(inc_rows)}')
-        if os.path.exists(file_path):
-            os.remove(file_path)
-        else:
-            print("The file does not exist")
+        while "the answer is invalid":
+            reply = str(input('Delete input file? (y/n): ')).lower().strip()
+            if reply[0] == 'y':
+                if os.path.exists(file_path):
+                    os.remove(file_path)
+                    print(f"{file_path} deleted")
+                    break
+                else:
+                    print("The file does not exist")
+                    break
+            else:
+                break
     except FileNotFoundError:
         print('File does not exist')
     return objects
@@ -62,7 +71,8 @@ class MainMenu:
             1: 'Add from the console input',
             2: 'Add from the file',
             3: 'Add from the json',
-            4: 'Exit',
+            4: 'Add from the xml',
+            5: 'Exit',
         }
         self.menu_exec()
 
@@ -102,7 +112,7 @@ class MainMenu:
                 Hw5.add_to_file(i)
 
         except ValueError:
-            pass
+            print("Incorrect file path")
 
     @staticmethod
     def option3():
@@ -119,7 +129,24 @@ class MainMenu:
                 Hw5.add_to_file(i)
 
         except ValueError:
-            pass
+            print("Incorrect file path")
+
+    @staticmethod
+    def option4():
+        """
+        Calls file parsed method - parse_xml
+        Requires user's file path input or use default path
+        :return:
+        """
+        try:
+            file_path = input('Write file path. Leave it blank if you want to use a default: ')
+            if file_path == '':
+                file_path = 'homework9.xml'
+            for i in Hw9.parse_xml(file_path):
+                Hw5.add_to_file(i)
+
+        except ValueError:
+            print("Incorrect file path")
 
     def menu_exec(self):
         """
@@ -146,6 +173,8 @@ class MainMenu:
                 elif option == 3:
                     self.option3()
                 elif option == 4:
+                    self.option4()
+                elif option == 5:
                     exit()
                 else:
                     print('Invalid option. Please enter a number between 1 and 4.')

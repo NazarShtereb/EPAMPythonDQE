@@ -1,0 +1,20 @@
+<root>
+    <publication type="New">
+        <name>New test</name>
+        <text>New text</text>
+        <city>New link</city>
+    </publication>
+    <!--error here-->
+    <publication type="Ad">
+        <nameds>Corrupted</nameds>
+        <text>Corrupted</text>
+    </publication>
+    <publication type="Stream">
+        <name>Stream test</name>
+        <text>Stream text</text>
+        <link>Stream link</link>
+        <!--error here-->
+        <date>Jun 19 2022 2:33P</date>
+        <duration>30</duration>
+    </publication>
+</root>

@@ -34,10 +34,18 @@ def parse_json(file_path):
                 inc_rows.append(i)
                 continue
         print(f'Content parsed! Number of skipped rows: {len(inc_rows)}')
-        if os.path.exists(file_path):
-            os.remove(file_path)
-        else:
-            print("The file does not exist")
+        while "the answer is invalid":
+            reply = str(input('Delete input file? (y/n): ')).lower().strip()
+            if reply[0] == 'y':
+                if os.path.exists(file_path):
+                    os.remove(file_path)
+                    print(f"{file_path} deleted")
+                    break
+                else:
+                    print("The file does not exist")
+                    break
+            else:
+                break
     except FileNotFoundError:
         print('File does not exist')
     return objects
