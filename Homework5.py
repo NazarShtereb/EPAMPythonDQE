@@ -1,5 +1,7 @@
 import datetime
-import Homework7 as Hm7
+
+import Homework7 as Hw7
+import Homework10 as Hw10
 
 
 class Publication:
@@ -185,9 +187,9 @@ class Stream(Publication):
 def add_to_file(pub):
     with open("newsfeed.txt", 'a', encoding='utf-8') as f:
         f.write(pub.publish() + f'\n{"-" * 25}\n')
-        readfile = Hm7.read_file("newsfeed.txt")
-        Hm7.generate_words_count(readfile)
-        Hm7.generate_letter_summary(readfile)
+        readfile = Hw7.read_file("newsfeed.txt")
+        Hw7.generate_words_count(readfile)
+        Hw7.generate_letter_summary(readfile)
 
 
 class Menu:
@@ -231,6 +233,8 @@ class Menu:
         text = input('Text of a new: ')
         city = input('City of a new: ')
         add_to_file(New(name, text, city))
+        connect = Hw10.DBConnection('server.db')
+        connect.insert_data(f'news(new_name, new_text, new_city) values("{name}","{text}","{city}")')
 
     @staticmethod
     def option2():
@@ -245,7 +249,10 @@ class Menu:
         name = input('Name of an ad: ')
         text = input('Text of an ad: ')
         date = input('Expire date (ex. Jun 19 2022): ')
+        date_db = datetime.datetime.strptime(date, "%b %d %Y")
         add_to_file(Ad(name, text, date))
+        connect = Hw10.DBConnection('server.db')
+        connect.insert_data(f'ads(ad_name, ad_text, actual_until) values("{name}","{text}","{date_db}")')
 
     @staticmethod
     def option3():
@@ -261,8 +268,12 @@ class Menu:
         text = input('Text of a stream: ')
         link = input('Link of a stream: ')
         date = input('Stream date (ex. Jun 19 2022 1:33PM): ')
+        date_db = datetime.datetime.strptime(date, '%b %d %Y %I:%M%p')
         duration = input('Stream duration in minutes (ex. 30): ')
         add_to_file(Stream(name, text, link, date, duration))
+        connect = Hw10.DBConnection('server.db')
+        connect.insert_data(f'streams(stream_name, stream_text, stream_link, stream_start, duration) values("{name}'
+                            f'","{text}", "{link}", "{date_db}","{duration}")')
 
     def menu_exec(self):
         """

@@ -5,10 +5,16 @@
     "City": "Kyiv"
 },
 {
+    "Type": "New",
+    "Name": "New name2",
+    "Text": "Text",
+    "City": "Kyiv"
+},
+{
     "Type": "Ad",
     "Name": "Ad32131 Name",
     "Text": "Text",
-    "Date": "Jun 19 2022332131"
+    "Date": "Jun 19 2022"
 },
 {
     "Type": "Stream",

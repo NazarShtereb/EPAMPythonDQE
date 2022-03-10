@@ -3,7 +3,13 @@ import Homework5 as Hw5
 import Homework4_2_review as Hw4_2
 import Homework8 as Hw8
 import Homework9 as Hw9
+import Homework10 as Hw10
 import os
+
+news = 'news (new_name, new_text, new_city) values (?, ?, ?)'
+ads = 'ads (ad_name, ad_text, actual_until) values (?, ?, ?)'
+stream = 'streams (stream_name, stream_text, stream_link, stream_start, duration)' \
+         ' values (?, ?, ?, ?, ?)'
 
 
 def parse_text(file_path):
@@ -58,6 +64,38 @@ def parse_text(file_path):
     return objects
 
 
+def batch_insert(file):
+    """
+    Runs connect and batch insert methods for every class
+    :param file:
+    :return:
+    """
+    connect = Hw10.DBConnection('server.db')
+    news_list, ads_list, stream_list = check_type(file)
+    connect.batch_insert(news, news_list)
+    connect.batch_insert(ads, ads_list)
+    connect.batch_insert(stream, stream_list)
+
+
+def check_type(pub):
+    """
+    Check type of publication
+    :param pub:
+    :return:
+    """
+    news_list = []
+    ads_list = []
+    streams_list = []
+    for i in pub:
+        if isinstance(i, Hw5.New):
+            news_list.append((i.name, i.text, i.city))
+        elif isinstance(i, Hw5.Ad):
+            ads_list.append((i.name, i.text, i.exp_date))
+        elif isinstance(i, Hw5.Stream):
+            streams_list.append((i.name, i.text, i.link, i.start_date, i.duration))
+    return news_list, ads_list, streams_list
+
+
 class MainMenu:
     """
     Class to create and print a menu with options. Has 3 options:
@@ -108,9 +146,10 @@ class MainMenu:
             file_path = input('Write file path. Leave it blank if you want to use a default: ')
             if file_path == '':
                 file_path = 'homework6.txt'
-            for i in parse_text(file_path):
+            file = parse_text(file_path)
+            for i in file:
                 Hw5.add_to_file(i)
-
+            batch_insert(file)
         except ValueError:
             print("Incorrect file path")
 
@@ -125,9 +164,10 @@ class MainMenu:
             file_path = input('Write file path. Leave it blank if you want to use a default: ')
             if file_path == '':
                 file_path = 'homework8.json'
-            for i in Hw8.parse_json(file_path):
+            file = Hw8.parse_json(file_path)
+            for i in file:
                 Hw5.add_to_file(i)
-
+            batch_insert(file)
         except ValueError:
             print("Incorrect file path")
 
@@ -142,9 +182,10 @@ class MainMenu:
             file_path = input('Write file path. Leave it blank if you want to use a default: ')
             if file_path == '':
                 file_path = 'homework9.xml'
-            for i in Hw9.parse_xml(file_path):
+            file = Hw9.parse_xml(file_path)
+            for i in file:
                 Hw5.add_to_file(i)
-
+            batch_insert(file)
         except ValueError:
             print("Incorrect file path")
 
