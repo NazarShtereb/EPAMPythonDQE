@@ -4,17 +4,16 @@
         <text>New text</text>
         <city>New link</city>
     </publication>
-    <!--error here-->
     <publication type="Ad">
-        <nameds>Corrupted</nameds>
+        <name>Corrupted</name>
         <text>Corrupted</text>
+        <date>Jun 19 2022</date>
     </publication>
     <publication type="Stream">
         <name>Stream test</name>
         <text>Stream text</text>
         <link>Stream link</link>
-        <!--error here-->
-        <date>Jun 19 2022 2:33P</date>
+        <date>Jun 19 2022 2:33PM</date>
         <duration>30</duration>
     </publication>
 </root>
